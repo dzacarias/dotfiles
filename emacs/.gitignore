@@ -1,0 +1,7 @@
+auto-save-list
+*~
+elpa
+.DS_Store
+backups
+places
+ido.last
