@@ -43,6 +43,8 @@
      flycheck-pos-tip
      yasnippet
      smartparens
+     swiper
+     counsel
      whitespace-cleanup-mode
 
 ;;;  Programming modes
@@ -90,6 +92,7 @@
 ;(eval-after-load 'grep '(require 'setup-rgrep))
 ;(eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-rbenv)
+(require 'setup-ivy)
 ;(require 'setup-hippie)
 ;(require 'setup-yasnippet)
 ;(require 'setup-perspective)

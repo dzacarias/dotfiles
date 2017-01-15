@@ -1,2 +1,8 @@
 .DS_Store
-
+*~
+/emacs/auto-save-list
+/emacs/elpa
+/emacs/backups
+/emacs/places
+/emacs/ido.last
+/emacs/recentf
