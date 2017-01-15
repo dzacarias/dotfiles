@@ -34,42 +34,33 @@
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   '(better-defaults
+   '(
+;;;  General 
+     better-defaults
      magit
      ace-jump-mode
-;     hydra
-     markdown-mode
-;     fill-column-indicator
      flycheck
-;     flycheck-pos-tip
-;     flycheck-clojure
-;     flx
-;     f
-;     flx-ido
-;     dired-details
+     flycheck-pos-tip
      yasnippet
      smartparens
-;     ido-vertical-mode
-;     ido-at-point
-;     simple-httpd
-;     guide-key
-;     restclient
-;     highlight-escape-sequences
-;     whitespace-cleanup-mode
-;     prodigy
-;     yesql-ghosts
-;     string-edit
+     whitespace-cleanup-mode
+
+;;;  Programming modes
      rbenv
-;    Project stuff
+     markdown-mode
+
+;;;  HTTP 
+     restclient     
+
+;;;  Project and navigation
      projectile
      neotree
-     helm
+
 ;;;  Appearance
      nlinum
-     spacemacs-theme                                        
      powerline
      all-the-icons
-;     zoom-frm
+     spacemacs-theme                                        
     )))
 
 (condition-case nil
@@ -90,15 +81,9 @@
   (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
 
-;; guide-key
-;(require 'guide-key)
-;(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x 8" "C-x +"))
-;(guide-key-mode 1)
-;(setq guide-key/recursive-key-sequence-flag t)
-;(setq guide-key/popup-window-position 'bottom)
+(setq global-whitespace-cleanup-mode t)
 
 ;; Setup extensions
-;(eval-after-load 'ido '(require 'setup-ido))
 ;(eval-after-load 'org '(require 'setup-org))
 ;(eval-after-load 'dired '(require 'setup-dired))
 ;(eval-after-load 'magit '(require 'setup-magit))
@@ -108,12 +93,8 @@
 ;(require 'setup-hippie)
 ;(require 'setup-yasnippet)
 ;(require 'setup-perspective)
-;(require 'setup-ffip)
 ;(require 'setup-html-mode)
 ;(require 'setup-paredit)
-
-;(require 'prodigy)
-;(global-set-key (kbd "C-x M-m") 'prodigy)
 
 ;; Default setup of smartparens
 ;(require 'smartparens-config)
@@ -133,7 +114,6 @@
 ;(eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
 ;(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 ;(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
-
 
 ;; Map files to modes
 ;(require 'mode-mappings)
