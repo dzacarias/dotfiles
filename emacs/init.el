@@ -1,11 +1,6 @@
-;; No splash screen 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
+;; No splash screen 
 (setq inhibit-startup-message t)
 
 ;; Dependencies dir
@@ -46,23 +41,31 @@
      swiper
      counsel
      whitespace-cleanup-mode
-
+     multiple-cursors
+     org-clock-csv
+     
 ;;;  Programming modes
      rbenv
      markdown-mode
-
+     js2-mode
+     sass-mode
+     coffee-mode
+     web-mode
+     
 ;;;  HTTP 
      restclient     
 
 ;;;  Project and navigation
      projectile
      neotree
+     counsel-projectile
 
 ;;;  Appearance
      nlinum
      powerline
      all-the-icons
-     spacemacs-theme                                        
+     spacemacs-theme
+     monokai-theme
     )))
 
 (condition-case nil
@@ -93,11 +96,16 @@
 ;(eval-after-load 'shell '(require 'setup-shell))
 (require 'setup-rbenv)
 (require 'setup-ivy)
-;(require 'setup-hippie)
-;(require 'setup-yasnippet)
-;(require 'setup-perspective)
-;(require 'setup-html-mode)
-;(require 'setup-paredit)
+(require 'setup-projects)
+(require 'setup-multiple-cursors)
+(require 'setup-coffee)
+(require 'setup-web)
+(require 'setup-org)
+;;(require 'setup-hippie)
+;;(require 'setup-yasnippet)
+;;(require 'setup-perspective)
+;;(require 'setup-html-mode)
+;;(require 'setup-paredit)
 
 ;; Default setup of smartparens
 ;(require 'smartparens-config)
@@ -115,14 +123,13 @@
 ;; Language specific setup files
 ;(eval-after-load 'js2-mode '(require 'setup-js2-mode))
 ;(eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-;(eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
 ;(eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
 
 ;; Map files to modes
-;(require 'mode-mappings)
+(require 'mode-mappings)
 
 ;; Setup key bindings
-;(require 'key-bindings)
+(require 'key-bindings)
 
 ;; Misc
 (when is-mac (require 'mac))
@@ -141,3 +148,4 @@
 ;(put 'upcase-region 'disabled nil)
 ;(put 'narrow-to-region 'disabled nil)
 
+(yas-global-mode 1)
